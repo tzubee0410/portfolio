@@ -1,0 +1,155 @@
+
+
+//flex mixin
+$fs:flex-start;$fc:center;$fe:flex-end;$fst:stretch;
+$sa:space-around; $sb:space-between; $se:space-evenly;
+
+@mixin flex($flex-jc,$flex-ai,$flex-width) {
+	display:flex;
+	flex-wrap:wrap;
+	justify-content: $flex-jc;
+	-ms-align-items: $flex-ai;
+	align-items: $flex-ai;
+	width: $flex-width;
+}
+//font 樣式
+@mixin font($font-size,$line-height,$letter-spacing,$color,$font-weight) {
+	font-size: ($font-size)+rem;
+	line-height: ($line-height)+rem;
+	letter-spacing: ($letter-spacing)+px;
+	color:$color;
+	font-weight: ($font-weight)#{'00'};
+}
+//陰影 
+@mixin box-shadow($box-shadow-data...) {
+	-webkit-box-shadow: $box-shadow-data;
+	box-shadow: $box-shadow-data;
+}
+//圓角 
+@mixin border-radius($radius-data) {
+    -webkit-border-radius: $radius-data;
+    -moz-border-radius: $radius-data;
+    -ms-border-radius: $radius-data;
+    border-radius: $radius-data;
+}
+//漸層
+@mixin gradient($bg-gradient-direction-main,$bg-gradient-direction-second,$bg-gradient-data...) {
+	background:#{-webkit-}linear-gradient($bg-gradient-direction-second,$bg-gradient-data);
+	background:#{-moz-}linear-gradient($bg-gradient-direction-second,$bg-gradient-data);
+	background:#{-o-}linear-gradient($bg-gradient-direction-second,$bg-gradient-data);
+	background:linear-gradient(to $bg-gradient-direction-main,$bg-gradient-data);
+}
+// 過場
+@mixin transition($transition-data,$transition-second,$transition-speed...	) {
+	-webkit-transition: $transition-data #{$transition-second}s $transition-speed;
+	-o-transition: $transition-data #{$transition-second}s $transition-speed;
+	transition: $transition-data #{$transition-second}s $transition-speed;
+}
+
+// 轉換
+@mixin transform($transform-style,$transform-data...) {
+	-webkit-transform: $transform-style+'('+$transform-data+')';
+	-ms-transform: $transform-style+'('+$transform-data+')';
+	-o-transform: $transform-style+'('+$transform-data+')';
+	transform: $transform-style+'('+$transform-data+')';
+}
+
+// 濾鏡
+@mixin filter($filter-style,$filter-data...) {
+	-webkit-filter: $filter-style+'('+$filter-data+')';
+	-o-filter: $filter-style+'('+$filter-data+')';
+	filter: $filter-style+'('+$filter-data+')';
+}
+
+// 形狀轉換
+@mixin clip-path($clip-path-data...) {
+	-webkit-clip-path: polygon+'('+$clip-path-data+')';
+	-o-clip-path: polygon+'('+$clip-path-data+')';
+	clip-path: polygon+'('+$clip-path-data+')';
+}
+
+// 背景圖
+// @mixin bg-img($bg-img,$bg-type,$bg-img-data...) {
+// 	background: url+'('+'img/'+$bg-img+'.'+'')'#{$bg-img-data};
+// }
+@mixin bg-img($bg-img,$bg-type,$bg-img-data...) {
+	background: url+'('+'../img/'+$bg-img+'.'+$bg-type+')'#{$bg-img-data};
+}
+
+// 偽元素
+@mixin before{
+	&::before{
+		content: '';
+		display: inline-block;
+		@content;
+	}
+}
+
+@mixin after{
+	&::after{
+		content: '';
+		display: inline-block;
+		@content;
+	}
+}
+
+@mixin bg-before($bg-beforecolor,$bg-beforesize,$bg-beforewidth,$bg-beforehight){
+	&::before{
+		content:'';
+		display: inline-block;
+		background:$bg-beforecolor;
+		background-size: $bg-beforesize;
+		width:$bg-beforewidth;
+		height:$bg-beforehight;
+		@content;
+	}
+}
+
+@mixin bg-after($bg-aftercolor,$bg-aftersize,$bg-afterwidth,$bg-afterhight){
+	&::after{
+		content:'';
+		display: inline-block;
+		background:$bg-aftercolor;
+		background-size: $bg-aftersize;
+		width:$bg-afterwidth;
+		height:$bg-afterhight;
+		@content;
+	}
+}
+
+
+
+
+//清除預設樣式
+@mixin respace { 
+	-webkit-appearance: none; -moz-appearance: none; appearance: none;
+	-webkit-box-shadow: none; box-shadow: none;
+	-webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; border-radius: 0;
+	border: 0;
+	outline: none;
+	cursor: pointer;
+	background: transparent;
+}
+
+
+
+// 圖片放大縮小計算
+@mixin sharpen {
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+// retina 高解析使用圖片
+@mixin image-2x($image, $width, $height) {
+	@media (min--moz-device-pixel-ratio: 1.3),(-o-min-device-pixel-ratio: 2.6/2),
+	(-webkit-min-device-pixel-ratio: 1.3),(min-device-pixel-ratio: 1.3),(min-resolution: 1.3dppx) 
+	{
+	  /* on retina, use image that's scaled by 2 */
+	  background-image: url($image);
+	  background-size: $width $height;
+	}
+  }
+
+  

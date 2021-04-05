@@ -1,0 +1,568 @@
+@import"_variable";//變數在這裡
+@import "_mixin";
+@import "_media";
+//@import"_main";
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url(//db.onlinewebfonts.com/c/bf05f041f45dcd046f7d858d97c3fcda?family=FF+DIN);
+//全部清空
+body { margin: 0; }
+a { text-decoration: none; }
+ul { list-style: none; margin: 0; padding: 0; }
+img { max-width: 100%; }
+* { font-family: $font-family-base; 
+    box-sizing: border-box;
+ }
+button:focus,input:focus,select:focus,textarea:focus { outline: none; }
+
+//動畫
+// CSS
+
+
+
+//這邊設定一些顏色變數，依照之後專案看要配置在那些位置
+$primary: #ffcd05;
+$primarylight: #1e88e5;
+$primarydark: #002171;
+$bgGrey: #efeff0;
+$secondary: #ffb300;
+$warning: #ffb300;
+$danger: #ef5350;
+$black: #212121;
+$grey: #f5f5f5;
+$white: #ffffff;
+$greyline: #bdbdbd; 
+
+
+
+//開始寫 SCSS
+.wrapper{
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    transform-origin: center bottom;
+    background: url('../img/ricepaper-G.jpg')repeat;
+    background-size: 300px 300px;
+    min-height: 100vh;
+    display: flex;
+}
+//外邊框
+.content{
+    width: 100%;
+    margin: 24px;
+    border: 2px solid #000000;
+}
+.title{
+    font-family: Portrait,serif;
+    font-weight: 600;
+}
+//腦袋
+header{
+    .haederTop{
+        width: 100%;
+        //box-shadow: 0 0 0 1px #231f20, inset 0 0 0 1px #231f20;
+        padding: 16px;
+        font-size: 120px;
+        text-align: center;
+        width: 100%;
+        &:hover{
+            color:$primary;
+            transition: .5s;
+        }
+    }
+    nav{
+       border-top: 2px solid #000;
+       border-bottom: 2px solid #000;
+        width: 100%;
+        ul{
+            margin: 0px;
+            @include flex($sa,$fs,100%);
+            //box-shadow: 0 0 0 1px #231f20, inset 0 0 0 1px #231f20;
+            li{
+                padding: 0px 30px;
+                position: relative;
+                >a{
+                    @include font(1.5,2,0,#000,6);  
+                    &:hover::before{
+                        content: '';
+                        display: inline-block;
+                        position: absolute;
+                        background: url('../img/nav-01.svg')no-repeat top right;
+                        background-size: cover;
+                        width: 150px;
+                        height: 40px;
+                        transform:rotate(5deg);
+                        transition: .3s;
+                        top: -10px;
+                        left: -7px;
+                       
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+//about
+.about-wrapper{
+    width: 100%;
+    //max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    .about-box{
+        // padding-top: 56px;
+        @include flex($sb,$fst,100%);
+        border-bottom: 2px solid #000;
+        .about-photo{
+            //border-right: 2px solid #000;
+            position: relative;
+            z-index: 1;
+            width: 33%;
+            // min-width: 300px;
+            >img{
+                display: block;
+                width: 100%;
+            }
+           
+        }
+        .grayscale{
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%)
+        }
+        .grayscale:hover{
+            -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+            transition:0.5s;
+          }
+          
+        .info{
+            width: calc(100% - 388px);
+            width: 67%;
+            padding: 80px 10%; 
+            position: relative;
+            border-left: 2px solid #000;
+            //padding-top: 80px;
+            span{
+                // padding-top: 16px;
+                display: block;
+                @include font(1,2,0,#000,4);
+                font-family:Noto Sans TC;
+            }
+            .info_title{
+                padding-top: 16px;
+                display: block;
+                @include font(10,2,0,rgba(255,204,5,0.2),6);
+                //font-family:"FF DIN","Noto Sans TC";
+                position: absolute;
+                top:50px;
+                right: 0;
+            }
+        }
+        
+    }
+}
+
+//skill
+.skill-wrapper{
+    width: 100%;
+    padding: 10%;
+    //max-width: 1200px;
+    margin: 0 auto;
+    @include flex($fs,$fs,100%);
+    position: relative;
+    border-top: 2px solid #000;
+    .title{
+        padding-top: 16px;
+        display: block;
+        //@include font(10,2,0,rgba(255,204,5,0.2),6);
+        position: absolute;
+        top:80px; 
+        @include font(5,5,0,#000,6);
+        &:hover{
+            color:$primary;
+            transition: .5s;
+        }  
+    }
+    .skill-box{
+        padding-top: 80px;
+        width: 48%;
+        .item{
+            @include flex($fs,$fc,100%);
+            margin-bottom: 24px;
+            >span{
+                @include font(1.5,2,0,#000,6); 
+                width: 70px;
+                height: 70px;
+                border: 1px solid #000;
+                border-radius: 20px;
+                text-align: center;
+                padding-top: 20px;
+                margin-right: 16px;
+            }
+            .bar{
+                @include font(1.3,3,0,#fff,4); 
+                font-family:Noto Sans TC;
+                position: relative;
+                z-index: 0;
+                padding-left: 50px;
+                @include after{
+                position: absolute;
+                background: url('../img/skill.svg')no-repeat top right;
+                background-size: cover;
+                width: 400px;
+                height: 30px;
+                left: 0px;
+                z-index: -1;
+               
+                }
+                
+            }
+            
+        }
+        
+    }
+    .skill-box .item:nth-child(1) .bar::after{
+        width: 380px;
+        height: 40px;
+    }
+    .skill-box .item:nth-child(2) .bar::after{
+        width: 350px;
+        height: 40px;
+    }
+    .skill-box .item:nth-child(3) .bar::after{
+        width: 380px;
+        height: 40px;
+    }
+    .skillBox2 .item:nth-child(1) .bar::after{
+        width: 380px;
+        height: 40px;
+    }
+    .skillBox2 .item:nth-child(2) .bar::after{
+        width: 280px;
+        height: 40px;
+    }
+    .skillBox2 .item:nth-child(3) .bar::after{
+        width: 200px;
+        height: 40px;
+    }
+    
+}
+
+
+.experience-wrapper{
+    width: 90%;
+    margin: 80px auto;
+    position: relative;
+    height: 100vh;
+    padding: 80px;
+    margin-bottom: 200px;
+    >span{
+        display: block;
+        @include font(20,19,0,rgba(255,255,255,0.4),6);
+        padding-left: 35%;
+        &:hover{
+            -webkit-filter: drop-shadow(0px 0px 20px rgba(194, 194, 194,0.8));
+            filter: drop-shadow(0px 0px 20px rgba(194, 194, 194, 0.8));
+            transition: .3s;
+            color: rgba(255,255,255,0.5)
+        }
+    }
+    @include after{
+        display: block;
+        position: absolute;
+        //background: url('../img/exp-01.svg')no-repeat top right;
+        background-size: cover;
+        width: 40px;
+        height:100vh;
+        top:43px;
+        left: 20%;
+        }
+        // @include before{
+        //     display: block;
+        //     position: absolute;
+        //     background: url('../img/learn-02.svg')no-repeat center center;
+        //     background-size: 100% 100%;
+        //     width: 1000px;
+        //     height:100vh;
+        //     top:0px;
+        //     left: 30%;
+        //     z-index: 0;
+        //     opacity: 0.8;
+        // }
+    
+
+
+    .title{
+        padding-top: 16px;
+        display: block;
+        @include font(8,2,0,rgba(255,204,5,0.2),6);
+        position: absolute;
+        top:100px;
+        left: 168px;
+        background-attachment: fixed;
+        -webkit-writing-mode: vertical-lr;
+        writing-mode: vertical-lr 
+        
+    }
+    .exper-box{
+        position: absolute;
+        @include flex($sb,$fc,100%);
+        width: 60%;
+        margin:0 auto;
+        top: 0px;
+        left: 150px;
+        .item-outer{
+            @include flex($sb,$fc,100%);
+            padding-left: 80px;
+            z-index: 2;
+            .item{
+                width: 100%;
+                margin-left: 50px;
+                margin-top: 60px;
+                display: block;
+                .time{
+                    @include font(1.3,2,0,$primary,6); 
+                    font-family:"FF DIN";
+                }
+                .desc>li{
+                    @include font(1,2,0,#000,4); 
+                    font-family:"FF DIN";
+                }
+            }
+        }
+        
+
+    }
+
+    .exper-box .item-outer .item:nth-child(2){
+         margin-top: 50px;
+        //transform:translateY(100px);
+        
+     }
+     .exper-box .outer2 .item:nth-child(1){
+        //transform:translateY(150px);
+        margin-top: 50px;
+     }
+     .exper-box .outer2 .item:nth-child(2){
+       //transform:translateY(300px);
+     }
+}
+
+
+// 自傳
+.self-wrapper{
+    width: 100%;
+    border-bottom: 2px solid #000;
+    padding: 80px 5%;
+    @include flex($sb,$fc,100%);
+    .info{
+        padding: 80px;
+        width: 40%;
+        position: relative;
+    }
+    .info2{
+        max-width: 800px;
+        width: 60%;
+        span{
+            padding-top: 16px;
+            display: block;
+            @include font(1,2,0,#000,6);
+            font-family:Noto Sans TC;
+        }
+    }
+    .info_title{
+        display: block;
+        @include font(5,5,0,#000,6);
+        &:hover{
+            color:$primary;
+            transition: .5s;
+        }
+    }
+}
+
+
+
+
+
+//contact
+.contact-wrapper{
+    position: relative;
+    max-width: 1200px;
+    margin:50px auto;
+    >span{
+        @include font(15,15,0,rgba(255,255,255,0.4),6);
+        z-index: 1;
+        &:hover{
+            -webkit-filter: drop-shadow(0px 0px 20px rgba(194, 194, 194,0.8));
+            filter: drop-shadow(0px 0px 20px rgba(194, 194, 194, 0.8));
+            transition: .8s;
+            color: rgba(255,255,255,0.5)
+        }
+    }
+    .contact-box{
+        width: 100%;
+        position: absolute;
+        top:200px;
+
+        @include flex($fs,$fc,100%); 
+        .icon{
+            width:20%;
+            margin-right: 10%;
+            position: relative;
+            >svg{
+                width: 200px;
+                fill: rgba(0, 0, 0, 0.2);
+                position: absolute;
+                top:45px;
+                left: 40px;
+                
+            }
+            .icon-outer{
+                width: 300px;
+                height: 300px;
+                border:solid 2px rgba(0, 0, 0, 0);
+                border-radius: 100%;
+                // -webkit-animation: loading 5s infinite linear;
+                // -moz-animation: loading 5s infinite linear;
+                // -o-animation: loading 5s infinite linear;
+                // animation: loading 5s infinite linear;
+            }
+        }
+        .email{
+            .email-title{
+                @include font(2,3,0,rgba(0,0,0,1),6);
+                -webkit-animation: loading 5s infinite linear;
+                -moz-animation: loading 5s infinite linear;
+                -o-animation: loading 5s infinite linear;
+                animation: loading 5s infinite linear;
+            }
+            width: 60%;
+            >a{
+                @include font(5,5,0,rgba(0, 0, 0, 1),6);
+                &:hover::before{
+                    content: '';
+                    display: inline-block;
+                    position: absolute;
+                    background: url('../img/nav-01.svg')no-repeat top right;
+                    background-size: cover;
+                    width: 50%;
+                    height: 40px;
+                    transform:rotate(-3deg);
+                    transition: .3s;
+                    bottom: 80px;
+                    right: 100px;
+                      
+                }
+            }
+        }
+    }
+}
+
+//works
+.works-wrapper{
+    position: relative;
+    max-width: 1200px;
+    margin:50px auto;
+    .works-tab{
+        @include flex($fc,$fc,100%);
+        
+    }
+    .works-outer{
+        margin:56px auto;
+        .tab-out{
+            @include flex($fs,$fs,100%);
+            .project{
+                width: 33.3%;
+                padding: 2%;
+                //box-shadow: 0 0 0 1px #231f20, inset 0 0 0 1px #231f20;
+            }
+        }
+    }
+}
+
+.back-button{
+    margin: 40px 0;
+    a{
+        @include font(1.5,2,0,rgba(0,0,0,0.8),6);
+    }
+}
+.project-title{
+    margin: 80px 0;
+    @include font(2,2,0,rgba(0, 0, 0, 1),6);
+}
+.mb-10{
+    margin-bottom: 110px;
+}
+
+
+
+
+//覆蓋ＢＳ tab區塊
+#bootstrap-overrides .nav-pills .nav-link{
+    color: #000;
+    @include font(1,2,0,#000,6);
+    font-family:Noto Sans TC;
+}
+
+
+
+#bootstrap-overrides .nav-link.active{
+    background-color: transparent;
+    @include after{
+            display: block;
+            position: absolute;
+            background: url('../img/round-01.svg')no-repeat center center;
+            background-size: cover;
+            width: 79px;
+            height: 51px;
+            top:3px;
+        }
+}
+
+
+a:hover{
+    text-decoration:none;
+    color: #000;
+}
+
+//contact 轉轉
+@keyframes loading {
+    0%{
+        transform: rotate(0deg) translateX(10px) rotate(-0deg);
+      }
+      100%{
+        transform: rotate(360deg) translateX(10px) rotate(-360deg);
+      }
+}
+
+
+
+@keyframes dash {
+    from {
+      stroke-dashoffset: 822;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+
+
+
+// .go-top {
+// 	// position: fixed;
+// 	bottom: 2em;
+// 	right: 2em;
+// 	text-decoration: none;
+// 	color: white;
+// 	background-color: rgba(0, 0, 0, 0.3);
+// 	font-size: 12px;
+// 	padding: 1em;
+// 	 display: none;
+// }
+
+// .go-top:hover {
+// 	background-color: rgba(0, 0, 0, 0.6);
+// }

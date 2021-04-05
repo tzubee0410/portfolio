@@ -1,0 +1,109 @@
+@import "_mixin" ;//把設置好的都放進來喔
+@import "_variable"; //把變數放進來喔
+
+
+//把全部都清空阿!!
+body { margin: 0; }
+a { text-decoration: none; }
+ul { list-style: none; margin: 0; padding: 0; }
+img { max-width: 100%; }
+* { font-family: $font-family-base; 
+    box-sizing: border-box;
+ }
+
+//放個動畫有需要再用
+@keyframes dotShowHide{
+	35% { opacity: 1; }
+	50% { opacity: 0; }
+	65% { opacity: 1; }
+}
+@-webkit-keyframes dotShowHide{
+	35% { opacity: 1; }
+	50% { opacity: 0; }
+	65% { opacity: 1; }
+}
+@keyframes leftRight {
+	25% { 
+		-webkit-transform: translateX(-55px) rotate(-20deg);
+		-ms-transform: translateX(-55px) rotate(-20deg);
+		-o-transform: translateX(-55px) rotate(-20deg);
+		transform: translateX(-55px) rotate(-20deg);
+	}
+	75% { 
+		-webkit-transform: translateX(40px) rotate(10deg);
+		-ms-transform: translateX(40px) rotate(10deg);
+		-o-transform: translateX(40px) rotate(10deg);
+		transform: translateX(40px) rotate(10deg);
+	}
+}
+@-webkit-keyframes leftRight {
+	25% { 
+		-webkit-transform: translateX(-55px) rotate(-20deg);
+		-ms-transform: translateX(-55px) rotate(-20deg);
+		-o-transform: translateX(-55px) rotate(-20deg);
+		transform: translateX(-55px) rotate(-20deg);
+	}
+	75% { 
+		-webkit-transform: translateX(40px) rotate(10deg);
+		-ms-transform: translateX(40px) rotate(10deg);
+		-o-transform: translateX(40px) rotate(10deg);
+		transform: translateX(40px) rotate(10deg);
+	}
+}
+
+
+
+//開始寫SCSS拉
+header{
+    @include bg-img(black-bg,png,no-repeat left top);
+    background-size: cover;
+	width: 100%;
+	padding: 1rem 1rem;
+	@include flex($fs,$fc,100%);
+    .logo{
+		@include font(2,2,10,$white,6);
+		width: 200px;
+	}
+	ul{
+		@include flex($fs,$fc,100%);
+		li{
+			@include font(1,1,1,$warning,4);
+			padding: 0px 30px;
+		}
+	}
+}
+
+.wrap{
+	width: 100%;
+	position: relative;
+	.sec01{
+		width: 100px;
+		height: 100px;
+		background-color: $secondary;
+		margin: auto;
+		@include border-radius(10px);
+		@include box-shadow(1px 10px 20px rgba(38,198,218,.8));
+		// @include transition(0.3s);
+		&:hover{
+			animation-name:leftRight;
+			animation-duration:2s;
+			@include box-shadow(1px 10px 20px rgba(19, 116, 129, 0.9));
+		
+		}
+		
+	}
+	.sec02{
+		width: 100px;
+		height: 100px;
+		background-color: $dark;
+		margin: auto;
+		@include border-radius(10px);
+		@include box-shadow(1px 10px 60px $light);
+		&:hover{
+			width: 200px;
+			@include box-shadow(1px 10px 40px $warning);
+			@include transition(width,.9,ease);
+		}
+		
+	}
+}

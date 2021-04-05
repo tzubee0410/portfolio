@@ -1,0 +1,44 @@
+
+
+@mixin laptop {
+    @media screen and (max-width:1200px){
+        @content;
+    }
+}
+@mixin rwd-pad {
+    @media screen and (max-width:768px){
+        @content;
+    }
+}
+@mixin rwd-mobilePlus {
+    @media screen and (max-width:414px){
+        @content;
+    }
+}
+
+@mixin rwd-mobile {
+    @media screen and (max-width:375px){
+        @content;
+    }
+}
+
+
+//自訂 當前大小
+
+@mixin rwd($rwd-max-width){
+    @media screen and (max-width:$rwd-max-width + px){
+        @content;
+        
+    }
+}
+@mixin rwd-min($rwd-min-width){
+    @media screen and (max-width:$rwd-min-width + px){
+        @content;
+    }
+}
+
+@mixin rwd-min($rwd-max-width,$rwd-min-width){
+    @media screen and (max-width:$rwd-max-width + px ) and (max-width:$rwd-min-width + px){
+        @content;
+    }
+}
