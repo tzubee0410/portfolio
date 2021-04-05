@@ -670,6 +670,15 @@ header nav ul li > a:hover::before {
   letter-spacing: 0px;
   color: rgba(0, 0, 0, 0.8);
   font-weight: 600;
+  display: block;
+}
+
+.back-button a:hover {
+  -webkit-transform: translate(-10px);
+          transform: translate(-10px);
+  color: #ffcd05;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 .project-title {
@@ -754,5 +763,127 @@ a:hover {
   to {
     stroke-dashoffset: 0;
   }
+}
+
+.skill-wrapper2 {
+  width: 100%;
+  padding: 10%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-align-items: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  position: relative;
+  border-top: 2px solid #000;
+}
+
+.skill-wrapper2 .title {
+  padding: 40px 0;
+  display: block;
+  font-size: 5rem;
+  line-height: 5rem;
+  letter-spacing: 0px;
+  color: #000;
+  font-weight: 600;
+}
+
+.skill-wrapper2 .title:hover {
+  color: #ffcd05;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.skill-wrapper2 .skill-box {
+  padding: 56px;
+  width: 100%;
+  border: 2px dashed #000;
+}
+
+.skill-wrapper2 .skill-box .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  margin: 24px auto;
+  border: 1px solid #000;
+}
+
+.skill-wrapper2 .skill-box .item > span {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: 0px;
+  color: #000;
+  font-weight: 600;
+  width: 60px;
+  height: 60px;
+  border-radius: 20px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.skill-wrapper2 .skill-box .item .bar {
+  font-size: 1.3rem;
+  line-height: 3rem;
+  letter-spacing: 0px;
+  color: #fff;
+  font-weight: 400;
+  position: relative;
+  z-index: 0;
+  padding-left: 50px;
+  width: calc(100% - 60px);
+}
+
+.skill-wrapper2 .skill-box .item .bar::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  left: 0px;
+  top: -6px;
+  z-index: -1;
+  background-color: #000000;
+}
+
+.skill-wrapper2 .skill-box .item:nth-child(1) .bar::after {
+  width: 80%;
+}
+
+.skill-wrapper2 .skill-box .item:nth-child(2) .bar::after {
+  width: 80%;
+}
+
+.skill-wrapper2 .skill-box .item:nth-child(3) .bar::after {
+  width: 85%;
+}
+
+.skill-wrapper2 .skill-box .item:nth-child(4) .bar::after {
+  width: 80%;
+}
+
+.skill-wrapper2 .skill-box .item:nth-child(5) .bar::after {
+  width: 70%;
+}
+
+.skill-wrapper2 .skill-box .item:nth-child(6) .bar::after {
+  width: 50%;
 }
 /*# sourceMappingURL=layout.css.map */
