@@ -437,7 +437,7 @@ header nav ul li > a:hover::before {
 
 @media screen and (max-width: 420px) {
   .experience-wrapper {
-    margin: 10px 10px 580px;
+    margin: 10px 10px 400px;
   }
 }
 
