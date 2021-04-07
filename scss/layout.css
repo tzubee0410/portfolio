@@ -51,6 +51,12 @@ button:focus, input:focus, select:focus, textarea:focus {
   border: 2px solid #000000;
 }
 
+@media screen and (max-width: 600px) {
+  .content {
+    padding: 0px 5px;
+  }
+}
+
 .title {
   font-family: Portrait,serif;
   font-weight: 600;
@@ -62,6 +68,18 @@ header .haederTop {
   font-size: 120px;
   text-align: center;
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  header .haederTop {
+    font-size: 90px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header .haederTop {
+    font-size: 50px;
+  }
 }
 
 header .haederTop:hover {
@@ -95,6 +113,12 @@ header nav ul {
 header nav ul li {
   padding: 0px 30px;
   position: relative;
+}
+
+@media screen and (max-width: 600px) {
+  header nav ul li {
+    padding: 0px 5px;
+  }
 }
 
 header nav ul li > a {
@@ -147,12 +171,26 @@ header nav ul li > a:hover::before {
 .about-wrapper .about-box .about-photo {
   position: relative;
   z-index: 1;
-  width: 33%;
+  width: 25%;
 }
 
 .about-wrapper .about-box .about-photo > img {
   display: block;
   width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .about-wrapper .about-box .about-photo {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .about-wrapper .about-box .about-photo {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 .about-wrapper .about-box .grayscale {
@@ -169,10 +207,36 @@ header nav ul li > a:hover::before {
 
 .about-wrapper .about-box .info {
   width: calc(100% - 388px);
-  width: 67%;
+  width: 75%;
   padding: 80px 10%;
   position: relative;
   border-left: 2px solid #000;
+}
+
+@media screen and (max-width: 1453px) {
+  .about-wrapper .about-box .info {
+    padding: 5% 10%;
+  }
+}
+
+@media screen and (max-width: 1378px) {
+  .about-wrapper .about-box .info {
+    padding: 3% 10%;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .about-wrapper .about-box .info {
+    padding: 2% 10% 0px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .about-wrapper .about-box .info {
+    width: 100%;
+    border-top: 2px solid #000;
+    border-left: 0px solid #000;
+  }
 }
 
 .about-wrapper .about-box .info span {
@@ -337,6 +401,40 @@ header nav ul li > a:hover::before {
   margin-bottom: 200px;
 }
 
+@media screen and (max-width: 1010px) {
+  .experience-wrapper {
+    margin: 40px auto;
+    padding: 0px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .experience-wrapper {
+    margin: 40px auto;
+    padding: 40px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .experience-wrapper {
+    margin: 10px auto;
+    padding: 0px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .experience-wrapper {
+    margin: 10px 10px 100px;
+    padding: 0px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .experience-wrapper {
+    margin: 10px 10px 225   px;
+  }
+}
+
 .experience-wrapper > span {
   display: block;
   font-size: 20rem;
@@ -345,6 +443,45 @@ header nav ul li > a:hover::before {
   color: rgba(255, 255, 255, 0.4);
   font-weight: 600;
   padding-left: 35%;
+}
+
+@media screen and (max-width: 1465px) {
+  .experience-wrapper > span {
+    padding-left: 20%;
+  }
+}
+
+@media screen and (max-width: 1252px) {
+  .experience-wrapper > span {
+    padding-left: 10%;
+    font-size: 15rem;
+    line-height: 15rem;
+    letter-spacing: 0px;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .experience-wrapper > span {
+    padding-left: 10%;
+    font-size: 10rem;
+    line-height: 10rem;
+    letter-spacing: 0px;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .experience-wrapper > span {
+    padding-left: 10%;
+    font-size: 6rem;
+    line-height: 6rem;
+    letter-spacing: 0px;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 600;
+  }
 }
 
 .experience-wrapper > span:hover {
@@ -382,6 +519,29 @@ header nav ul li > a:hover::before {
   -webkit-writing-mode: vertical-lr;
   -ms-writing-mode: tb-lr;
       writing-mode: vertical-lr;
+}
+
+@media screen and (max-width: 900px) {
+  .experience-wrapper .title {
+    left: 10%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .experience-wrapper .title {
+    left: 5px;
+    font-size: 5rem;
+    line-height: 2rem;
+    letter-spacing: 0px;
+    color: rgba(255, 204, 5, 0.2);
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .experience-wrapper .title {
+    display: none;
+  }
 }
 
 .experience-wrapper .exper-box {
@@ -423,11 +583,23 @@ header nav ul li > a:hover::before {
   z-index: 2;
 }
 
+@media screen and (max-width: 1010px) {
+  .experience-wrapper .exper-box .item-outer {
+    padding-left: 0px;
+  }
+}
+
 .experience-wrapper .exper-box .item-outer .item {
   width: 100%;
   margin-left: 50px;
   margin-top: 60px;
   display: block;
+}
+
+@media screen and (max-width: 1010px) {
+  .experience-wrapper .exper-box .item-outer .item {
+    margin-left: 0px;
+  }
 }
 
 .experience-wrapper .exper-box .item-outer .item .time {
@@ -439,6 +611,16 @@ header nav ul li > a:hover::before {
   font-family: "FF DIN";
 }
 
+@media screen and (max-width: 500px) {
+  .experience-wrapper .exper-box .item-outer .item .time {
+    font-size: 1rem;
+    line-height: 1rem;
+    letter-spacing: 0px;
+    color: #ffcd05;
+    font-weight: 600;
+  }
+}
+
 .experience-wrapper .exper-box .item-outer .item .desc > li {
   font-size: 1rem;
   line-height: 2rem;
@@ -446,6 +628,18 @@ header nav ul li > a:hover::before {
   color: #000;
   font-weight: 400;
   font-family: "FF DIN";
+}
+
+@media screen and (max-width: 1010px) {
+  .experience-wrapper .exper-box {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .experience-wrapper .exper-box {
+    left: 10px;
+  }
 }
 
 .experience-wrapper .exper-box .item-outer .item:nth-child(2) {
@@ -459,15 +653,15 @@ header nav ul li > a:hover::before {
 .self-wrapper {
   width: 100%;
   border-bottom: 2px solid #000;
-  padding: 80px 5%;
+  padding: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-align-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -475,15 +669,21 @@ header nav ul li > a:hover::before {
   width: 100%;
 }
 
+@media screen and (max-width: 768px) {
+  .self-wrapper {
+    padding: 40px;
+  }
+}
+
 .self-wrapper .info {
-  padding: 80px;
-  width: 40%;
+  width: 100%;
   position: relative;
+  max-width: 800px;
 }
 
 .self-wrapper .info2 {
   max-width: 800px;
-  width: 60%;
+  width: 100%;
 }
 
 .self-wrapper .info2 span {
@@ -535,6 +735,36 @@ header nav ul li > a:hover::before {
   color: rgba(255, 255, 255, 0.5);
 }
 
+@media screen and (max-width: 1200px) {
+  .contact-wrapper > span {
+    font-size: 10rem;
+    line-height: 10rem;
+    letter-spacing: 0px;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .contact-wrapper > span {
+    font-size: 6rem;
+    line-height: 6rem;
+    letter-spacing: 0px;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contact-wrapper > span {
+    font-size: 3rem;
+    line-height: 3rem;
+    letter-spacing: 0px;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 600;
+  }
+}
+
 .contact-wrapper .contact-box {
   width: 100%;
   position: absolute;
@@ -568,11 +798,44 @@ header nav ul li > a:hover::before {
   left: 40px;
 }
 
+@media screen and (max-width: 768px) {
+  .contact-wrapper .contact-box .icon > svg {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contact-wrapper .contact-box .icon > svg {
+    width: 100px;
+  }
+}
+
 .contact-wrapper .contact-box .icon .icon-outer {
   width: 300px;
   height: 300px;
   border: solid 2px rgba(0, 0, 0, 0);
   border-radius: 100%;
+}
+
+@media screen and (max-width: 960px) {
+  .contact-wrapper .contact-box .icon {
+    width: 15%;
+    margin-right: 5%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contact-wrapper .contact-box .icon {
+    width: 15%;
+    margin-right: 0%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contact-wrapper .contact-box .icon {
+    width: 20px;
+    margin-right: 0%;
+  }
 }
 
 .contact-wrapper .contact-box .email {
@@ -587,6 +850,16 @@ header nav ul li > a:hover::before {
   font-weight: 600;
   -webkit-animation: loading 5s infinite linear;
   animation: loading 5s infinite linear;
+}
+
+@media screen and (max-width: 1200px) {
+  .contact-wrapper .contact-box .email .email-title {
+    font-size: 1.3rem;
+    line-height: 5rem;
+    letter-spacing: 0px;
+    color: black;
+    font-weight: 600;
+  }
 }
 
 .contact-wrapper .contact-box .email > a {
@@ -611,6 +884,58 @@ header nav ul li > a:hover::before {
   transition: .3s;
   bottom: 80px;
   right: 100px;
+}
+
+@media screen and (max-width: 1200px) {
+  .contact-wrapper .contact-box .email > a {
+    font-size: 4rem;
+    line-height: 4rem;
+    letter-spacing: 0px;
+    color: black;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .contact-wrapper .contact-box .email > a {
+    font-size: 3rem;
+    line-height: 3rem;
+    letter-spacing: 0px;
+    color: black;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .contact-wrapper .contact-box .email > a {
+    font-size: 2rem;
+    line-height: 2rem;
+    letter-spacing: 0px;
+    color: black;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contact-wrapper .contact-box .email > a {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    letter-spacing: 0px;
+    color: black;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 1193px) {
+  .contact-wrapper .contact-box {
+    top: 100px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contact-wrapper .contact-box {
+    top: 0px;
+  }
 }
 
 .works-wrapper {
@@ -660,6 +985,12 @@ header nav ul li > a:hover::before {
   padding: 2%;
 }
 
+@media screen and (max-width: 1366px) {
+  .works-wrapper .works-outer {
+    margin: 56px 3%;
+  }
+}
+
 .back-button {
   margin: 40px 0;
 }
@@ -688,6 +1019,17 @@ header nav ul li > a:hover::before {
   letter-spacing: 0px;
   color: black;
   font-weight: 600;
+}
+
+@media screen and (max-width: 1366px) {
+  .project-title {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    letter-spacing: 0px;
+    color: black;
+    font-weight: 600;
+    margin: 40px 0;
+  }
 }
 
 .mb-10 {
@@ -808,6 +1150,12 @@ a:hover {
   border: 2px dashed #000;
 }
 
+@media screen and (max-width: 768px) {
+  .skill-wrapper2 .skill-box {
+    padding: 5%;
+  }
+}
+
 .skill-wrapper2 .skill-box .item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -885,5 +1233,11 @@ a:hover {
 
 .skill-wrapper2 .skill-box .item:nth-child(6) .bar::after {
   width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .skill-wrapper2 {
+    padding: 5%;
+  }
 }
 /*# sourceMappingURL=layout.css.map */

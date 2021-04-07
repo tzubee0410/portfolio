@@ -52,6 +52,9 @@ $greyline: #bdbdbd;
     width: 100%;
     margin: 24px;
     border: 2px solid #000000;
+    @include rwd(600){
+        padding: 0px 5px;
+    }
 }
 .title{
     font-family: Portrait,serif;
@@ -66,6 +69,12 @@ header{
         font-size: 120px;
         text-align: center;
         width: 100%;
+        @include rwd(768){
+            font-size: 90px;
+        }
+        @include rwd(600){
+            font-size: 50px;
+        }
         &:hover{
             color:$primary;
             transition: .5s;
@@ -82,6 +91,9 @@ header{
             li{
                 padding: 0px 30px;
                 position: relative;
+                @include rwd(600){
+                    padding: 0px 5px;
+                }
                 >a{
                     @include font(1.5,2,0,#000,6);  
                     &:hover::before{
@@ -119,11 +131,21 @@ header{
             //border-right: 2px solid #000;
             position: relative;
             z-index: 1;
-            width: 33%;
+            width: 25%;
             // min-width: 300px;
             >img{
                 display: block;
                 width: 100%;
+            }
+            @include rwd(800){
+                width: 60%;
+                margin: 0 auto;
+
+            }
+            @include rwd(500){
+                width: 100%;
+                margin: 0 auto;
+
             }
            
         }
@@ -139,11 +161,25 @@ header{
           
         .info{
             width: calc(100% - 388px);
-            width: 67%;
+            width: 75%;
             padding: 80px 10%; 
             position: relative;
             border-left: 2px solid #000;
             //padding-top: 80px;
+            @include rwd(1453){
+                padding: 5% 10%; 
+            }
+            @include rwd(1378){
+                padding: 3% 10%; 
+            }
+            @include rwd(1140){
+                padding: 2% 10% 0px; 
+            }
+            @include rwd(800){
+                width: 100%;
+                border-top: 2px solid #000;
+                border-left: 0px solid #000;
+            }
             span{
                 // padding-top: 16px;
                 display: block;
@@ -258,10 +294,43 @@ header{
     height: 100vh;
     padding: 80px;
     margin-bottom: 200px;
+    @include rwd(1010){
+        margin: 40px auto;
+        padding: 0px;
+    }
+    @include rwd(800){
+        margin: 40px auto;
+        padding: 40px;
+    }
+    @include rwd(650){
+        margin: 10px auto;
+        padding: 0px;
+    }
+    @include rwd(500){
+        margin: 10px 10px 100px;
+        padding: 0px;
+    }
+    @include rwd(420){
+        margin: 10px 10px 225   px;
+    }
     >span{
         display: block;
         @include font(20,19,0,rgba(255,255,255,0.4),6);
         padding-left: 35%;
+        @include rwd(1465){
+            padding-left: 20%;
+        }
+        @include rwd(1252){
+            padding-left: 10%;
+            @include font(15,15,0,rgba(255,255,255,0.4),6);
+        }
+        @include rwd(900){
+            padding-left: 10%;
+            @include font(10,10,0,rgba(255,255,255,0.4),6);
+        }@include rwd(768){
+            padding-left: 10%;
+            @include font(6,6,0,rgba(255,255,255,0.4),6);
+        }
         &:hover{
             -webkit-filter: drop-shadow(0px 0px 20px rgba(194, 194, 194,0.8));
             filter: drop-shadow(0px 0px 20px rgba(194, 194, 194, 0.8));
@@ -303,7 +372,17 @@ header{
         left: 168px;
         background-attachment: fixed;
         -webkit-writing-mode: vertical-lr;
-        writing-mode: vertical-lr 
+        writing-mode: vertical-lr ;
+        @include rwd(900){
+            left: 10%;
+        }
+        @include rwd(768){
+            left: 5px;
+            @include font(5,2,0,rgba(255,204,5,0.2),6);
+        }
+        @include rwd(600){
+           display: none;
+        }
         
     }
     .exper-box{
@@ -317,23 +396,37 @@ header{
             @include flex($sb,$fc,100%);
             padding-left: 80px;
             z-index: 2;
+            @include rwd(1010){
+                padding-left: 0px;
+            }
             .item{
                 width: 100%;
                 margin-left: 50px;
                 margin-top: 60px;
                 display: block;
+                @include rwd(1010){
+                    margin-left: 0px;
+                }
                 .time{
                     @include font(1.3,2,0,$primary,6); 
                     font-family:"FF DIN";
+                    @include rwd(500){
+                        @include font(1,1,0,$primary,6); 
+                    }
                 }
+
                 .desc>li{
                     @include font(1,2,0,#000,4); 
                     font-family:"FF DIN";
                 }
             }
         }
-        
-
+        @include rwd(1010){
+            width: 100%;
+        }
+        @include rwd(768){
+            left: 10px;
+        }
     }
 
     .exper-box .item-outer .item:nth-child(2){
@@ -355,16 +448,20 @@ header{
 .self-wrapper{
     width: 100%;
     border-bottom: 2px solid #000;
-    padding: 80px 5%;
-    @include flex($sb,$fc,100%);
+    padding: 80px;
+    @include flex($fc,$fc,100%); 
+    @include rwd(768){
+        padding: 40px;
+    }
     .info{
-        padding: 80px;
-        width: 40%;
+        // padding: 80px;
+        width: 100%;
         position: relative;
+        max-width: 800px;
     }
     .info2{
         max-width: 800px;
-        width: 60%;
+        width: 100%;
         span{
             padding-top: 16px;
             display: block;
@@ -378,6 +475,7 @@ header{
         &:hover{
             color:$primary;
             transition: .5s;
+          
         }
     }
 }
@@ -400,6 +498,15 @@ header{
             transition: .8s;
             color: rgba(255,255,255,0.5)
         }
+        @include rwd(1200){
+            @include font(10,10,0,rgba(255,255,255,0.4),6);
+        }
+        @include rwd(900){
+            @include font(6,6,0,rgba(255,255,255,0.4),6);
+        }
+        @include rwd(500){
+            @include font(3,3,0,rgba(255,255,255,0.4),6);
+        }
     }
     .contact-box{
         width: 100%;
@@ -417,6 +524,12 @@ header{
                 position: absolute;
                 top:45px;
                 left: 40px;
+                @include rwd(768){
+                    width: 150px;
+                }
+                @include rwd(500){
+                    width: 100px;
+                }
                 
             }
             .icon-outer{
@@ -424,10 +537,19 @@ header{
                 height: 300px;
                 border:solid 2px rgba(0, 0, 0, 0);
                 border-radius: 100%;
-                // -webkit-animation: loading 5s infinite linear;
-                // -moz-animation: loading 5s infinite linear;
-                // -o-animation: loading 5s infinite linear;
-                // animation: loading 5s infinite linear;
+              
+            }
+            @include rwd(960){
+                width:15%;
+                margin-right: 5%;
+            }
+            @include rwd(500){
+                width:15%;
+                margin-right: 0%;
+            }
+            @include rwd(500){
+                width:20px;
+                margin-right: 0%;
             }
         }
         .email{
@@ -437,6 +559,9 @@ header{
                 -moz-animation: loading 5s infinite linear;
                 -o-animation: loading 5s infinite linear;
                 animation: loading 5s infinite linear;
+                @include rwd(1200){
+                    @include font(1.3,5,0,rgba(0,0,0,1),6);
+                }
             }
             width: 60%;
             >a{
@@ -455,7 +580,27 @@ header{
                     right: 100px;
                       
                 }
+                @include rwd(1200){
+                    @include font(4,4,0,rgba(0, 0, 0, 1),6);
+                }
+                @include rwd(960){
+                    @include font(3,3,0,rgba(0, 0, 0, 1),6);
+                }
+                @include rwd(786){
+                    @include font(2,2,0,rgba(0, 0, 0, 1),6);
+                }
+                @include rwd(500){
+                    @include font(1.8,1.8,0,rgba(0, 0, 0, 1),6);
+                }
             }
+        }
+        @include rwd(1193){
+            top:100px;
+
+        }
+        @include rwd(500){
+            top:0px;
+
         }
     }
 }
@@ -467,7 +612,6 @@ header{
     margin:50px auto;
     .works-tab{
         @include flex($fc,$fc,100%);
-        
     }
     .works-outer{
         margin:56px auto;
@@ -478,6 +622,9 @@ header{
                 padding: 2%;
                 //box-shadow: 0 0 0 1px #231f20, inset 0 0 0 1px #231f20;
             }
+        }
+        @include rwd(1366){
+            margin:56px 3%;
         }
     }
 }
@@ -498,6 +645,10 @@ header{
 .project-title{
     margin: 80px 0;
     @include font(2,2,0,rgba(0, 0, 0, 1),6);
+    @include rwd(1366){
+        @include font(1.2,2,0,rgba(0, 0, 0, 1),6);
+        margin: 40px 0;
+    }
 }
 .mb-10{
     margin-bottom: 110px;
@@ -606,6 +757,9 @@ a:hover{
         padding: 56px;
         width: 100%;
         border: 2px dashed #000;
+        @include rwd(768){
+            padding: 5%;
+        }
         .item{
             @include flex($fs,$fc,90%);
             margin:24px auto;
@@ -657,6 +811,10 @@ a:hover{
     }
     .skill-box .item:nth-child(6) .bar::after{
         width: 50%;
+    }
+
+    @include rwd(768){
+        padding: 5%;
     }
     
 }
