@@ -55,6 +55,9 @@ $greyline: #bdbdbd;
     @include rwd(600){
         padding: 0px 5px;
     }
+    @include rwd(400){
+        margin: 3%;
+    }
 }
 .title{
     font-family: Portrait,serif;
@@ -311,7 +314,7 @@ header{
         padding: 0px;
     }
     @include rwd(420){
-        margin: 10px 10px 558px;
+        margin: 10px 10px 580px;
     }
     >span{
         display: block;

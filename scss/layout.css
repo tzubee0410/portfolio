@@ -57,6 +57,12 @@ button:focus, input:focus, select:focus, textarea:focus {
   }
 }
 
+@media screen and (max-width: 400px) {
+  .content {
+    margin: 3%;
+  }
+}
+
 .title {
   font-family: Portrait,serif;
   font-weight: 600;
@@ -431,7 +437,7 @@ header nav ul li > a:hover::before {
 
 @media screen and (max-width: 420px) {
   .experience-wrapper {
-    margin: 10px 10px 558px;
+    margin: 10px 10px 580px;
   }
 }
 
