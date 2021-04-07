@@ -295,23 +295,23 @@ header{
     padding: 80px;
     margin-bottom: 200px;
     @include rwd(1010){
-        margin: 40px auto;
+        margin: 40px auto 200px;
         padding: 0px;
     }
     @include rwd(800){
-        margin: 40px auto;
+        margin: 40px auto 200px;
         padding: 40px;
     }
     @include rwd(650){
-        margin: 10px auto;
+        margin: 10px auto 200px;
         padding: 0px;
     }
     @include rwd(500){
-        margin: 10px 10px 100px;
+        margin: 10px auto 200px;
         padding: 0px;
     }
     @include rwd(420){
-        margin: 10px 10px 225   px;
+        margin: 10px 10px 250px;
     }
     >span{
         display: block;

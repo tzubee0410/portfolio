@@ -403,35 +403,35 @@ header nav ul li > a:hover::before {
 
 @media screen and (max-width: 1010px) {
   .experience-wrapper {
-    margin: 40px auto;
+    margin: 40px auto 200px;
     padding: 0px;
   }
 }
 
 @media screen and (max-width: 800px) {
   .experience-wrapper {
-    margin: 40px auto;
+    margin: 40px auto 200px;
     padding: 40px;
   }
 }
 
 @media screen and (max-width: 650px) {
   .experience-wrapper {
-    margin: 10px auto;
+    margin: 10px auto 200px;
     padding: 0px;
   }
 }
 
 @media screen and (max-width: 500px) {
   .experience-wrapper {
-    margin: 10px 10px 100px;
+    margin: 10px auto 200px;
     padding: 0px;
   }
 }
 
 @media screen and (max-width: 420px) {
   .experience-wrapper {
-    margin: 10px 10px 225   px;
+    margin: 10px 10px 250px;
   }
 }
 
